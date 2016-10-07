@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试 underscore-analysis.js（参照手写）</title>
+</head>
+
+<body>
+    <div>
+        <table>
+            <thead>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+            </thead>
+            <tbody id="J-init-node">
+            </tbody>
+        </table>
+    </div>
+    <script type="text/template" id="J-init-tpl">
+        <%_.each(data, function(obj, index, data) {%>
+            <tr>
+                <td>
+                    <%= obj.number %>
+                </td>
+                <td>
+                    <%= obj.name %>
+                </td>
+                <td>
+                    <%= obj.age %>
+                </td>
+            </tr>
+            <%});%>
+    </script>
+    <script type="text/javascript" src="../underscore-analysis.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
