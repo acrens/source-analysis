@@ -3,7 +3,7 @@
  * http://underscorejs.org
  * 
  * analysis：
- * 
+ * https://github.com/acrens/source-analysis/tree/master/underscore-analysis/version/1.8.3/underscore-analysis.js
  */
 (function() {
 
