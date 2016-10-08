@@ -1223,9 +1223,9 @@
 
     // 该内部方法会被递归调用
     var eq = function(a, b, aStack, bStack) {
-        if (a === b) return a !== 0 || 1 / a === 1 / b;
+        if (a === b) return a !== 0 || 1 / a === 1 / b; // 0 === -0，返回 false
 
-        if (a == null || b == null) return a === b;
+        if (a == null || b == null) return a === b; // 有一个为 null 或者 undefined，返回 false
 
         if (a instanceof _) a = a._wrapped;
 
@@ -1233,8 +1233,9 @@
 
         var className = toString.call(a);
 
-        if (className !== toString.call(b)) return false;
+        if (className !== toString.call(b)) return false; // 是否都是原型链 toString
 
+        // 类型判断
         switch (className) {
             case '[object RegExp]':
             case '[object String]':
@@ -1249,6 +1250,7 @@
                 return +a === +b;
         };
 
+        // 数组判断
         var areArrays = className === '[object Array]';
         if (!areArrays) {
 
@@ -1299,6 +1301,7 @@
         return true;
     };
 
+    // 0 === -0 false
     _.isEqual = function(a, b) {
         return eq(a, b);
     };
@@ -1320,6 +1323,7 @@
         return toString.call(obj) === '[object Array]';
     };
 
+    // {}、[]、function 均满足
     _.isObject = function(obj) {
         var type = typeof obj;
         return type === 'function' || type === 'object' && !!obj;
