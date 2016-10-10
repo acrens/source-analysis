@@ -728,6 +728,8 @@
                 high = mid;
             }
         }
+
+        return low;
     };
 
     // 返回索引值
