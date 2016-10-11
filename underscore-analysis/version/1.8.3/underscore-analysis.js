@@ -821,7 +821,7 @@
                 args[i] = boundArgs[i] === _ ? arguments[position++] : boundArgs[i];
             }
 
-            while (position < arguments.length) args.push(argument[position++]);
+            while (position < arguments.length) args.push(arguments[position++]);
 
             return executeBound(func, bound, this, this, args);
         };
@@ -955,7 +955,7 @@
     };
 
     // 返回一个新的 predicate 本体
-    _negate = function(predicate) {
+    _.negate = function(predicate) {
 
         return function() {
             return !predicate.apply(this, arguments);
