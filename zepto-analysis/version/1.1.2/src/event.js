@@ -1,7 +1,6 @@
 /**
  * zpeto.js 模块之 event
  */
-;
 (function($) {
 	var _zid = 1,
 		undefined,
