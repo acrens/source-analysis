@@ -3,7 +3,8 @@
  */
 (function() {
 
-	// 增加支持桌面的Internet Explorer 10+和Windows Phone 8
+	// 增加支持桌面的 Internet Explorer 10+ 和 Windows Phone 8
+	// jQuery的CSS()方法，其底层运作就应用了 getComputedStyle 以及 getPropertyValue方法
 	try {
 		getComputedStyle(undefined);
 	} catch(e) {

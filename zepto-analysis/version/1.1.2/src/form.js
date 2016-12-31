@@ -3,7 +3,7 @@
  */
 (function($) {
 
-	// 获取表单 [{name: name, value: value}] 数据数组
+	// 获取第一个匹配表单数据数组，格式：[{name: name, value: value}] 
 	$.fn.serializeArray = function() {
 		var name, type, result = [],
 			add = function(value) {
