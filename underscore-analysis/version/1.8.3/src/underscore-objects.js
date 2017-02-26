@@ -193,7 +193,7 @@ _.isMatch = function(object, attrs) {
 
 // 该内部方法会被递归调用
 var eq = function(a, b, aStack, bStack) {
-    if (a === b) return a !== 0 || 1 / a === 1 / b; // 0 === -0，返回 false
+    if (a === b) return a !== 0 || 1 / a === 1 / b; // Infinity === -Infinity，返回 false
 
     if (a == null || b == null) return a === b; // 有一个为 null 或者 undefined，返回 false
 
