@@ -4,7 +4,7 @@ import { isServerReadering } from 'core/util/env'
 
 initGlobalAPI(Vue)
 
-// 给Vue原型新增$isServer属性，并定义属性get函数，Vue.prototype.$isServer会调用get
+// 给Vue原型新增$isServer属性，并定义属性get函数，Vue.prototype.$isServer会调用get（可以实现视图/数据联动）
 Object.defineProperty(Vue.prototype, '$isServer', {
 	get: isServerReadering
 })
