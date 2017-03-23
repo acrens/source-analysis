@@ -1,9 +1,9 @@
 import config from '../config'
-import { perf } from '../util/perf'
 import { initProxy } from './proxy'
 import { initState } from './state'
 import { initRender } from './render'
 import { initEvents } from './events'
+import { mark, measure } from '../util/perf'
 import { initLifecycle , callHook } from './lifecycle'
 import { initProvide, initInjections } from './inject'
 import { extend, mergeOptions, formatCompinentName } from '../util/index'
@@ -42,7 +42,9 @@ export function initMixin(Vue: Class<Component>) {
 	    initEvents(vm)
 	    initRender(vm)
 	    callHook(vm, 'beforeCreate')
+	    initInjections(vm)
 	    initState(vm)
+	    initProvide(vm)
 	    callHook(vm, 'created')
 
 	    /* istanbul ignore if */
